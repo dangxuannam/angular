@@ -1,0 +1,42 @@
+<!-- <div>
+  ten sv: dang xuan nam
+  msv: ph16521
+</div> -->
+<table class="table control">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>GENDER</th>
+      <th>AVATAR</th>
+      <th>STATUS</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let teacher of teachers  ">
+      <td>{{teacher.id}}</td>
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.age}}</td>
+      <td>
+        <app-table-gender [gender] = "teacher.gender" ></app-table-gender>
+      </td>
+      <td> 
+        <app-table-avatar
+        [src]= "teacher.avatar"
+          [agee] = "teacher.age"
+        >
+          
+        </app-table-avatar>
+        <!-- <img [src]="teacher.avatar" alt="" class="boder-blue"> -->
+
+      <td>
+        <app-table-status [status] ="teacher.status" >
+
+        </app-table-status>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
