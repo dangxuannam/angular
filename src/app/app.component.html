@@ -1,11 +1,73 @@
-<h2>DSSV</h2>
-  
+<div class="container">
+   <div>
+     <h1> Angular form</h1>
+   </div>
+   <div>
+    <!-- <app-show-validate [files]="name" [key]></app-show-validate> -->
+     <app-form></app-form>
+     
+   </div>
+<h2>DANH SACH GIANG VIEN</h2>
+<form action="">
+  <div class="form-group">
+    <label for="">Ten GV</label>
+    <input type="text" 
+    class="form-control" 
+    (input)="onInput($event, 'name')"
+    [value] ="inputValues.name"
+    >
+  </div>
+  <div class="form-group">
+    <label for="">Tuoi GV</label>
+    <input type="number"
+     class="form-control" 
+     (input)="onInput($event, 'age')"
+     [value] ="inputValues.age"
+     >
+     <div class="form-group">
+      <label for="">AVATAR</label>
+      <input type="text"
+       class="form-control" 
+       (input)="onInput($event, 'avatar')"
+      
+       [value] ="inputValues.avatar"
+     
+       > 
+       </div>
+       <div class="form-group">
+        <label for="">Gioi tinh</label>
+        <input type="radio"
+         class="form-check" 
+         (input)="onInput($event, 'gender')"
+         [checked] = "inputValues.gender === '1'"
+         [value] ="1"
+         
+         >nam
+         <input type="radio"
+         class="form-check" 
+         (input)="onInput($event, 'gender')"
+         [checked] = "inputValues.gender === '0'"
+         [value] ="0"
+         
+         >nu
+         </div>
+       
+     <button type="button" (click)="onSubmit()"  class="btn btn-primary">them moi</button>
+  </div>
+</form>
 <!-- <div>
   ten sv: dang xuan nam
   msv: ph16521
 </div> -->
 <div>
- <app-table [users] = "teachers"> </app-table>
+  <button
+  class="btn btn-info"
+  (click)="changeTableStatus()"
+>{{showStatus ? 'Ẩn' : 'Hiện'}} bảng teacher </button>
+ <app-table [users] = "teachers" *ngIf ="showStatus === true">
+   
+ </app-table>
 
 <app-table-name avatar = "dx nam"></app-table-name>
+</div>
 </div>

@@ -1,0 +1,8 @@
+<span *ngIf = " (field.dirty || field.touched ) && field.errors?.['required']" class="text-danger">{{key}} khong duoc de trong</span>
+<!-- name -->
+<span *ngIf = " (field.dirty || field.touched ) && field.errors?.['minlength']" class="text-danger"> {{key}}  tren 5 ki tu</span>
+<!-- age -->
+<span *ngIf = "(field.dirty || field.touched) && field.errors?.['min']" class="text-danger"> {{key}}}tren 1 so</span>
+<span *ngIf = "(field.dirty || field.touched) && field.errors?.['max']" class="text-danger"> {{key}}duoi 100 so</span> 
+<!-- email -->
+<span *ngIf = "(field.dirty || field.touched) && field.errors?.['email']" class="text-danger"> xin moi nhap {{key}} hop le</span>  <br>

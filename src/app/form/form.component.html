@@ -1,0 +1,30 @@
+<!-- <p>{{userForm.value | json}}</p> -->
+<form action="" #userForm="ngForm"  (ngSubmit) = "onSubmit(userForm.value)">
+    <div class="form-groud" >
+        <label for="">Name user</label>
+        <input type="text" class="form-control" name="name"   ngModel  required minlength="5"  #name = "ngModel">
+        <!-- <span *ngIf = " (name.dirty || name.touched ) && name.errors?.['required']" class="text-danger">khong duoc de trong</span> -->
+        <!-- <span *ngIf = " (name.dirty || name.touched ) && name.errors?.['minlength']"> tu 5 ki tu</span> -->
+        <app-show-validate [field]="name" key="tên" ></app-show-validate>
+    <!-- TOUCHED MAN HINH DT -->
+    </div>
+    <div class="form-groud">
+        <label for="">Age user</label>
+        
+        <input type="number" class="form-control" name="age" ngModel required min="1" max="100" #age="ngModel">
+        <app-show-validate [field]="age" key="tuổi" ></app-show-validate>
+        <!-- <span *ngIf = " (age.dirty || age.touched) &&age.errors?.['required']" class="text-danger">khong duoc de trong</span> <br> -->
+        <!-- <span *ngIf = "(age.dirty || age.touched) && age.errors?.['min']" class="text-danger">tren 1 so</span>
+        <span *ngIf = "(age.dirty || age.touched) && age.errors?.['max']" class="text-danger">duoi 100 so</span> <br> -->
+       
+    </div>
+    <div class="form-groud">
+        <label for="">Email</label>
+        
+        <input type="email" class="form-control" name="email" ngModel required email  #email="ngModel">
+        <app-show-validate [field]="email" key="email" ></app-show-validate>
+       
+       
+    </div>
+    <button class="btn btn-primary" [disabled] ="!userForm.valid">Submit</button>
+</form>
