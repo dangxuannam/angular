@@ -13,6 +13,9 @@ import { TableGenderComponent } from './table/table-gender/table-gender.componen
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { ShowValidateComponent } from './component/show-validate/show-validate.component';
+import { UserComponent } from './user/user.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { ShowValidateComponent } from './component/show-validate/show-validate.c
     TableStatusComponent,
     TableGenderComponent,
     FormComponent,
-    ShowValidateComponent
+    ShowValidateComponent,
+    UserComponent,
+    UserFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+
 <p>{{userForm.value | json}}</p>
 <!-- userForm là 1 thể hiện của ngForm
 và sẽ quản lý, lắng nghe thay đổi của form nó đặt vào -->
@@ -41,8 +42,8 @@ và sẽ quản lý, lắng nghe thay đổi của form nó đặt vào -->
     <div class="form-groud">
         <label for="">avatar</label>
         
-        <input type="text" class="form-control" name="avatar" [(ngModel)]="inputValues.avatar" required   #avatar="ngModel">
-        <app-show-validate [field]="avatar" key="avatar" ></app-show-validate>
+        <input type="text" class="form-control" name="image" [(ngModel)]="inputValues.image" required   #image="ngModel">
+        <app-show-validate [field]="image" key="image" ></app-show-validate>
        
        
     </div>
@@ -56,30 +57,3 @@ và sẽ quản lý, lắng nghe thay đổi của form nó đặt vào -->
     </div>
     <button class="btn btn-primary" [disabled] ="!userForm.valid">Submit</button>
 </form>
-<div>
-<table class="table table-hover">
-    <thead>
-        <th>STT</th>
-        <th>NAME</th>
-        <th>AGE</th>
-        <th>EMAIL</th>
-        <th>AVATAR</th>
-        <th>PHONE</th>
-        <th>ACTION</th>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let user of users">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.age}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.avatar}}</td>
-        <td>{{user.phone}}</td>
-        <td> <button class="btn btn-primary" (click) ="onDelete(user.id)" > xóa </button>
-            <td> <button class="btn btn-primary" (click)="onEdit(user.id)">sửa </button></td>
-       
-        
-    </tr>
-    </tbody>
-</table>
-</div>
